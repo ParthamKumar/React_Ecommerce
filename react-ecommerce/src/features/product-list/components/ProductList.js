@@ -26,7 +26,7 @@ import { ITEMS_PER_PAGE } from "../../../app/constants";
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
-  { name: "Price: High to Low", sort: "-price", current: false },
+  { name: "Price: High to Low", sort: "price",order: "desc", current: false },
 ];
 
 const filters = [
@@ -347,7 +347,7 @@ export default function ProductList() {
             page={page}
             setPage={setPage}
             handlePage={handlePage}
-            // totalItems={totalItems} commenting this because it is coming 0 from upward causing error
+            totalItems={totalItems} 
           ></Pagination>
         </main>
       </div>
@@ -529,7 +529,7 @@ function DesktopFilter({ handleFilter }) {
   );
 }
 
-function Pagination({ page, setPage, handlePage, totalItems =55 }) {
+function Pagination({ page, setPage, handlePage, totalItems }) {
   return (
     <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
