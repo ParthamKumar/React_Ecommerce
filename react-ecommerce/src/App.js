@@ -67,11 +67,11 @@ function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
 
-  // useEffect(()=>{
-  //   if(user){
-  //     dispatch(fetchItemsByUserIdAsync(user.id))
-  //   }
-  // },[dispatch, user])
+  useEffect(()=>{
+    if(user){
+      dispatch(fetchItemsByUserIdAsync(user.id))
+    }
+  },[dispatch, user])
 
   return (
     <div className="App">
